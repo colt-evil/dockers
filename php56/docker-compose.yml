@@ -1,6 +1,0 @@
-php56-dev:
- container_name: php56
- build: .
- volumes:
-  - ./php-fpm.d:/usr/local/etc/php-fpm.d/
-  - ./www:/var/www/html

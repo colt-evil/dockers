@@ -1,0 +1,23 @@
+
+version: "2"
+services:
+  php:
+    container_name: php56
+    build: ./php56
+    networks:
+      - test
+    volumes:
+      - ./php56/php-fpm.d:/usr/local/etc/php-fpm.d/
+      - ./www:/var/www/html
+  openresty:
+    container_name: openresty
+    build: ./openresty
+    networks:
+      - test
+    volumes:
+      - ./openresty/conf:/usr/local/openresty/nginx/conf
+      - ./www:/var/www/html
+
+networks:
+  test:
+    driver: bridge
