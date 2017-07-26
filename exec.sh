@@ -2,7 +2,7 @@
 name=$1
 if [ -z "$1" ]; then
     echo "usage $0 [container-name] [command]"
-    echo "example: $0 douyu-php /bin/bash"
+    echo "example: $0 php /bin/bash"
     exit
 fi
 container_id=`docker ps -aql -f "name=$name"`
